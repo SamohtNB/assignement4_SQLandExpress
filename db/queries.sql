@@ -1,0 +1,4 @@
+SELECT autor_id, s.name, m.description FROM servers s INNER JOIN mods m ON s.mod_id = m.id WHERE s.autor_id = 1;
+SELECT m.name, m.version, u.username  FROM mods m INNER JOIN autors a ON m.autor_id = a.id INNER JOIN users u ON a.user_id = u.id;
+SELECT u.created_at, a.created_at, m.created_at, s.created_at FROM users u INNER JOIN autors a ON u.id = a.user_id INNER JOIN mods m ON a.id = m.autor_id INNER JOIN servers s ON m.id = s.mod_id;
+SELECT u.username, m.name, s.name FROM users u INNER JOIN autors a ON u.id = a.user_id INNER JOIN mods m ON a.id = m.autor_id INNER JOIN servers s ON m.id = s.mod_id WHERE u.username = 'admin';
